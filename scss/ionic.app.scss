@@ -1,0 +1,119 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+$dark:                            #a61a1f !default;
+$royal:                           #d02127 !default;
+$bar-royal-border:                #d02127 !default;
+
+$tab-royal-border:                #d02127 !default;
+
+$placeholder: #999 !default;
+
+a { color: $royal; }
+
+::-webkit-input-placeholder {
+   color: $placeholder !important;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: $placeholder !important;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: $placeholder !important;  
+}
+
+:-ms-input-placeholder {  
+   color: $placeholder !important;  
+}
+
+.message {
+	margin:20px;
+}
+
+.icon-s:before {
+	margin-top:5px;
+	font-size:1.21em !important;
+	line-height:1.21em !important;
+}
+
+// Hide back button
+.back-button {
+	display:none !important;
+}
+
+// Hide on iOS / Android
+body.platform-ios .hide-ios,
+body.platform-android .hide-android {
+	display:none !important;
+}
+
+// App grid
+.app-container {
+     display: -webkit-flex;
+     -webkit-flex-direction: column;
+     height: 100%;
+}
+
+.app-container > .row {
+     -webkit-flex: 1;
+}
+
+.app-row {
+     -webkit-align-items: center;
+}
+
+.app-row .col {
+	 min-height:120px;
+}
+
+.app-icon {
+	width:64px;
+}
+
+.app-name {
+	overflow:hidden;
+	width:100%;
+	height:38px;
+	text-overflow:ellipsis;
+}
+
+// Loader
+.loader {
+	position:absolute ;
+	left:50% ;
+	margin-left: -30px;
+	top:50% ;
+	margin-top: -50px;
+	z-index: -1;
+}
+// Set the color of the icon
+svg path,
+svg rect{
+  fill: #999;
+}
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+// Address bar
+@import "ionic.address.bar";
+
+

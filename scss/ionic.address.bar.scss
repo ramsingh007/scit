@@ -1,0 +1,158 @@
+// Address Bar
+
+// Variables
+//-----------------------------------
+
+$z-index-address-bar: 11;
+
+// Mixins
+//-----------------------------------
+
+@mixin address-bar-style($address-bar-bg-color, $address-bar-active-border-color, $address-bar-text) {
+  .item-input-wrapper {
+    border-bottom: 1px solid $address-bar-active-border-color;
+    background: $address-bar-bg-color;
+    input[type="search"] {
+      @include placeholder(lighten($address-bar-text, 40%));
+      color: $address-bar-text;
+    }
+    .address-bar-go {
+      &:before {
+        color: $address-bar-text;
+      }
+    }
+  }
+}
+
+.has-address-bar {
+	padding:0;
+}
+
+.address-bar-wrapper {
+	.item-input-inset {
+		.address-bar-alt {
+			padding-left: 0;
+			padding-right: 0;
+			margin-right:0;
+			&:before {
+			  font-size: 27px;
+			}
+		}
+	}
+}
+
+// Styles
+//-----------------------------------
+
+.address-bar {
+  position: relative;
+  width: 100%;
+  height: $bar-height;
+  z-index: $z-index-bar-above;
+
+  .address-bar-wrapper {
+    z-index: $z-index-address-bar;
+    position: relative;
+    height: $bar-height;
+    top: 0;
+    right:0;
+    width: 100%;
+
+    .item-input-inset {
+		border-top-width:0px;
+      .icon.placeholder-icon:before {
+        padding-top: 3px;
+        font-size: 16px;
+      }
+      .item-input-wrapper {
+ 		margin:0;
+        background: $light;
+        height: 28px;
+		padding-left:0;
+		padding-right:0;
+        .address-bar-go {
+          padding: 0;
+          &:before {
+            color: #333;
+            font-size: 26px;
+            padding-top: 1px;
+          }
+        }
+      }
+    }
+  }
+}
+
+//android
+.platform-android {
+
+  .address-bar {
+    .address-bar-light  {
+      @include address-bar-style($bar-light-bg, $bar-light-active-border, $bar-light-text);
+    }
+    .address-bar-stable  {
+      @include address-bar-style($bar-stable-bg, $bar-stable-active-border, $bar-stable-text);
+    }
+    .address-bar-positive  {
+      @include address-bar-style($bar-positive-bg, $bar-positive-active-border, $bar-positive-text);
+    }
+    .address-bar-calm  {
+      @include address-bar-style($bar-calm-bg, $bar-calm-active-border, $bar-positive-text);
+    }
+    .address-bar-assertive  {
+      @include address-bar-style($bar-assertive-bg, $bar-assertive-active-border, $bar-assertive-text);
+    }
+    .address-bar-balanced  {
+      @include address-bar-style($bar-balanced-bg, $bar-balanced-active-border, $bar-balanced-text);
+    }
+    .address-bar-energized  {
+      @include address-bar-style($bar-energized-bg, $bar-energized-active-border, $bar-energized-text);
+    }
+    .address-bar-royal  {
+      @include address-bar-style($bar-royal-bg, $bar-royal-active-border, $bar-royal-text);
+    }
+    .address-bar-dark  {
+      @include address-bar-style($bar-dark-bg, $bar-dark-active-border, $bar-dark-text);
+    }
+    .address-bar-default  {
+      @include address-bar-style($bar-default-bg, $bar-default-active-border, $bar-default-text)
+    };
+  }
+
+  .address-bar-wrapper {
+    .item-input-inset {
+      padding-right: 12;
+      .address-bar-cancel {
+
+      }
+      .item-input-wrapper {
+        border-radius: 0;
+        border-bottom:0;
+        padding-left: 0;
+        input[type="search"] {
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+.address-bar-transition-horizontal {
+  @include transition-transform(cubic-bezier(.25, .45, .05, 1) 300ms);
+  @include translate3d(100%, 0, 0);
+}
+
+.address-bar-transition-vertical {
+  @include transition-transform(cubic-bezier(.25, .45, .05, 1) 350ms);
+  @include translate3d(0, -100%, 0);
+}
+
+.address-bar-transition-fade {
+  @include transition(opacity 250ms ease-in-out) ;
+  opacity: 0;
+}
+
+.address-bar-in {
+  @include translate3d(0, 0, 0);
+  opacity: 1;
+}

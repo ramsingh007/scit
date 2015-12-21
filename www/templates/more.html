@@ -1,0 +1,20 @@
+<ion-view view-title="More">
+
+        <ion-header-bar class="bar-subheader has-address-bar">
+            <div class="address-bar">
+                <div class="address-bar-wrapper address-bar-light">
+                    <div class="bar bar-light item-input-inset">
+                        <div class="item-input-wrapper">
+                            <input type="text" class="address-bar-search" autocorrect="off" autocapitalize="none" placeholder="Enter code or url" ng-model="view.input" my-enter="openView()">
+                            <button class="address-bar-go button button-icon icon ion-android-checkbox" ng-click="openView()"></button>
+                        </div>
+        				<button class="address-bar-alt button button-icon button-clear ion-qr-scanner" ng-click="scanQr()"></button>
+                    </div>
+                </div>
+            </div>
+        </ion-header-bar>
+
+    <ion-content>
+
+    </ion-content>
+</ion-view>
